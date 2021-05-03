@@ -1,18 +1,45 @@
-const express = require('express');
-const cors = require('cors');
+// Configuring ENV
+const dotenv = require("dotenv");
+dotenv.config();
+
+// App config
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/api/customers', cors(), (req, res) => {
-  const customers = [
-    {id: 1, firstName: 'John', lastName: 'Doe'},
-    {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-    {id: 3, firstName: 'Mary', lastName: 'Swanson'},
-  ];
+const routeUrls = require("./routes/routes");
 
-  res.json(customers);
-});
+// Middlewares
+app.use(cors());
 
-const port = 5000;
+app.use("/app", routeUrls); // telling the app to use all the routes that are of the form: app/route
+// Basically all routes will be appended to /app
 
+mongoose.connect(
+  process.env.DATABASE_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  },
+  () => {
+    console.log("Database is connected");
+  }
+);
+
+const port = 4000;
 app.listen(port, () => `Server running on port ${port}`);
+
+// app.get('/api/customers', cors(), (req, res) => {
+//   const customers = [
+//     {id: 1, firstName: 'John', lastName: 'Doe'},
+//     {id: 2, firstName: 'Brad', lastName: 'Traversy'},
+//     {id: 3, firstName: 'Mary', lastName: 'Swanson'},
+//   ];
+
+//   res.json(customers);
+// });
