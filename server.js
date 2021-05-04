@@ -11,13 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const routeUrls = require("./routes/routes");
+const routeUrls = require("./routes/routes.js");
 
 // Middlewares
 app.use(cors());
 
-app.use("/app", routeUrls); // telling the app to use all the routes that are of the form: app/route
-// Basically all routes will be appended to /app
+app.use("/", routeUrls);
 
 mongoose.connect(
   process.env.DATABASE_URL,
