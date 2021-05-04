@@ -32,9 +32,7 @@ mongoose.connect(
 );
 
 const port = process.env.PORT|| 4000;
-app.get("/", function (req, res) {
-  res.status(200).send("Hello world!");
-});
+
 app.listen(port, () => `Server running on port ${port}`);
 
 // app.get('/api/customers', cors(), (req, res) => {
