@@ -1,12 +1,10 @@
-import { Button } from "react-bootstrap";
-import React, { useState } from "react";
+import React from "react";
 
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Button, Nav, NavDropdown } from "react-bootstrap";
 
 import logo from "../assets/logo.png";
 import "./stylesheets/Navigation.css";
 function Navigation() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
   return (
     <div className="navbar__custom">
       <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -44,24 +42,18 @@ function Navigation() {
             <Nav.Link className="navbar__links" href="/blog">
               Blog
             </Nav.Link>
-            {isSignedIn ? (
-              <Button
-                href="/signin"
-                style={{ margin: "4px" }}
-                variant="outline-primary"
-              >
-                Sign In
-              </Button>
-            ) : (
-              <Button
-                href="/signup"
-                style={{ margin: "4px" }}
-                variant="outline-primary"
-              >
-                Sign Up
-              </Button>
-            )}
-            <Button style={{ margin: "4px" }} variant="outline-warning">
+            {/* <Button
+              href="/signup"
+              style={{ margin: "4px" }}
+              variant="outline-primary"
+            >
+              Sign Up
+            </Button> */}
+            <Button
+              href="/donate"
+              style={{ margin: "4px" }}
+              variant="outline-warning"
+            >
               Donate
             </Button>
           </Nav>

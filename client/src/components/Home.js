@@ -1,7 +1,8 @@
 import React from "react";
 
-import MainBox from "./MainBox";
+import { Link } from "react-router-dom";
 
+import MainBox from "./MainBox";
 import ambulance from "../assets/ambulance.svg";
 import injection from "../assets/injection.svg";
 import oxygen from "../assets/oxygen.svg";
@@ -13,17 +14,40 @@ import testing from "../assets/testing.svg";
 import medicines from "../assets/medicines.svg";
 import "./stylesheets/Home.css";
 function Home() {
+  const styles = {
+    textDecoration: "none",
+    color: "black",
+  };
   return (
     <div className="boxes">
-      <MainBox imgSrc={injection} heading="Remdesivir" />
-      <MainBox imgSrc={beds} heading="Beds" />
-      <MainBox imgSrc={blood} heading="Blood Plasma" />
-      <MainBox imgSrc={medicines} heading="Medicines" />
-      <MainBox imgSrc={oxygen} heading="Oxygen" />
-      <MainBox imgSrc={testing} heading="Testing Centres" />
-      <MainBox imgSrc={ambulance} heading="Ambulance" />
-      <MainBox imgSrc={food} heading="Food" />
-      <MainBox imgSrc={chat} heading="Chatting with people" />
+      <Link style={styles} to="/injection">
+        <MainBox imgSrc={injection} heading="Remdesivir" />
+      </Link>
+      <Link style={styles} to="/beds">
+        <MainBox imgSrc={beds} heading="Beds" />
+      </Link>
+      <Link style={styles} to="/blood">
+        <MainBox imgSrc={blood} heading="Blood Plasma" />
+      </Link>
+      <Link style={styles} to="/medicines">
+        <MainBox imgSrc={medicines} heading="Medicines" />
+      </Link>
+      <Link style={styles} to="/oxygen">
+        <MainBox imgSrc={oxygen} heading="Oxygen" />
+      </Link>
+      <Link style={styles} to="/testing">
+        <MainBox imgSrc={testing} heading="Testing Centres" />
+      </Link>
+
+      <Link style={styles} to="/ambulance">
+        <MainBox imgSrc={ambulance} heading="Ambulance" />
+      </Link>
+      <Link style={styles} to="/food">
+        <MainBox imgSrc={food} heading="Food" />
+      </Link>
+      <Link style={styles} to="/chat">
+        <MainBox imgSrc={chat} heading="Chatting with people" />
+      </Link>
     </div>
   );
 }

@@ -4,7 +4,8 @@
   font-size: 16px;
 }
 
-div.box {
+.box {
+  text-decoration: none;
   height: 300px;
   width: 250px;
   margin: 30px;
@@ -21,8 +22,7 @@ div.box {
   -o-border-radius: 15px;
   transition: transform 0.2s; /* Animation */
 }
-div.box:hover {
-  cursor: pointer;
+.box:hover {
   transform: scale(1.08);
   -webkit-transform: scale(1.08);
   -moz-transform: scale(1.08);
@@ -30,7 +30,7 @@ div.box:hover {
   -o-transform: scale(1.08);
   box-shadow: 4px 5px 10px rgba(1, 38, 43, 0.25);
 }
-div.box__content {
+.box__content {
   display: flex;
   flex-direction: column;
   align-items: center;
