@@ -4,6 +4,9 @@
   "description": "Website for Covid resources.",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": "14.16.1"
+  },
   "scripts": {
     "client-install": "cd client && npm install",
     "start": "node server.js",
