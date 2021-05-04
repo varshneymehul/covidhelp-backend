@@ -30,7 +30,7 @@ mongoose.connect(
   }
 );
 
-const port = 4000;
+const port = process.env.PORT|| 4000;
 app.get("/", function (req, res) {
   res.status(200).send("Hello world!");
 });
