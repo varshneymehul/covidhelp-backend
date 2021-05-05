@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Website for Covid resources.",
   "main": "server.js",
-  "type": "module",
   "engines": {
     "node": "14.16.1"
   },

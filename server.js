@@ -1,7 +1,8 @@
 // Configuring ENV
- if (process.env.NODE_ENV !== "production") {
-   require("dotenv").config();
- }
+const dotenv = require("dotenv");
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 
 // App config
 const express = require("express");
@@ -31,7 +32,7 @@ mongoose.connect(
   }
 );
 
-const port = process.env.PORT|| 4000;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => `Server running on port ${port}`);
 
