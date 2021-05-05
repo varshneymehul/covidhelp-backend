@@ -5,6 +5,7 @@ const resourceSchema = mongoose.Schema({
   resourceName: String,
   resourceDescription: String,
   resourceContact: String,
+  resourceContact2: String,
   resourceLocation: {
     state: String,
     city: String,

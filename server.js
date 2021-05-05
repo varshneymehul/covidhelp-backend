@@ -41,6 +41,7 @@ app.post("/submit/resource", (req, res) => {
     resourceName: req.body.resourceName,
     resourceDescription: req.body.resourceDescription,
     resourceContact: req.body.resourceContact,
+    resourceContact2: req.body.resourceContact2,
     resourceLocation: {
       state: req.body.resourceLocation.state,
       city: req.body.resourceLocation.city,
