@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
 }
+const mySecret = process.env["DATABASE_URL"];
 
 // App config
 const express = require("express");
@@ -78,14 +79,6 @@ app.get("/:requestedResource", (req, res) => {
   );
 });
 
-app.listen(port, () => `Server running on port ${port}`);
-
-// app.get('/api/customers', cors(), (req, res) => {
-//   const customers = [
-//     {id: 1, firstName: 'John', lastName: 'Doe'},
-//     {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-//     {id: 3, firstName: 'Mary', lastName: 'Swanson'},
-//   ];
-
-//   res.json(customers);
-// });
+app.listen(port, function () {
+  console.log(`Server running on port ${port}`);
+});
