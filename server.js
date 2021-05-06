@@ -59,6 +59,15 @@ app.post("/submit/resource", (req, res) => {
       console.log(err);
     });
 });
+app.get("/", (req, res) => {
+  Resource.find({}, function (err, data) {
+    if (!err) {
+      res.status(201).send(data);
+    } else {
+      res.status(500).send(err);
+    }
+  });
+});
 app.get("/:requestedResource", (req, res) => {
   const requestedResource = req.params.requestedResource;
   console.log(requestedResource);
